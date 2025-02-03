@@ -16,17 +16,17 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `authors`
+-- Table structure for table `Authors`
 --
 CREATE DATABASE IF NOT EXISTS alx_book_store
 USE alx_book_store;
 
 --
 
-DROP TABLE IF EXISTS `authors`;
+DROP TABLE IF EXISTS `Authors`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `authors` (
+CREATE TABLE `Authors` (
   `author_id` int NOT NULL AUTO_INCREMENT,
   `author_name` varchar(215) NOT NULL,
   PRIMARY KEY (`author_id`)
@@ -34,12 +34,12 @@ CREATE TABLE `authors` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `authors`
+-- Dumping data for table `Authors`
 --
 
-LOCK TABLES `authors` WRITE;
-/*!40000 ALTER TABLE `authors` DISABLE KEYS */;
-/*!40000 ALTER TABLE `authors` ENABLE KEYS */;
+LOCK TABLES `Authors` WRITE;
+/*!40000 ALTER TABLE `Authors` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Authors` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
