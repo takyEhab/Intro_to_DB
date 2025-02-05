@@ -1,0 +1,2 @@
+ANALYZE SELECT *
+FROM books
