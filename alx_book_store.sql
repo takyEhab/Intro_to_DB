@@ -18,14 +18,15 @@
 --
 -- Table structure for table `authors`
 --
-
+CREATE DATABASE IF NOT EXISTS alx_book_store
+USE alx_book_store; 
 DROP TABLE IF EXISTS `authors`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `authors` (
-  `author_id` int NOT NULL AUTO_INCREMENT,
+CREATE TABLE `Authors` (
+  `author_id ` int NOT NULL AUTO_INCREMENT,
   `author_name` varchar(215) NOT NULL,
-  PRIMARY KEY (`author_id`)
+  PRIMARY KEY (`author_id `)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -42,10 +43,10 @@ UNLOCK TABLES;
 -- Table structure for table `orders`
 --
 
-DROP TABLE IF EXISTS `orders`;
+DROP TABLE IF EXISTS `Books`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `orders` (
+CREATE TABLE `Books` (
   `book_id` int NOT NULL,
   `title` varchar(130) DEFAULT NULL,
   `price` double DEFAULT NULL,
@@ -53,17 +54,17 @@ CREATE TABLE `orders` (
   `author_id` int DEFAULT NULL,
   PRIMARY KEY (`book_id`),
   KEY `author_id` (`author_id`),
-  CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`author_id`) REFERENCES `authors` (`author_id`)
+  CONSTRAINT `Books_ibfk_1` FOREIGN KEY (`author_id`) REFERENCES `authors` (`author_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `orders`
+-- Dumping data for table `Books`
 --
 
-LOCK TABLES `orders` WRITE;
-/*!40000 ALTER TABLE `orders` DISABLE KEYS */;
-/*!40000 ALTER TABLE `orders` ENABLE KEYS */;
+LOCK TABLES `Books` WRITE;
+/*!40000 ALTER TABLE `Books` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Books` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
