@@ -9,7 +9,12 @@ my_db = mysql.connector.connect(
 )
 my_cursor = my_db.cursor()
 
-# Create a table named `customers` (if it doesn't exist)
-my_cursor.execute("""
-    CREATE DATABASE IF NOT EXISTS alx_book_store
-""")
+try:
+    my_cursor.execute("""
+        CREATE DATABASE IF NOT EXISTS alx_book_store
+    """)
+except mysql.connector.Error:
+    print("Error creating")
+
+my_cursor.close()
+my_db.close()
