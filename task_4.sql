@@ -1,7 +1,7 @@
 -- ANALYZE SELECT *
 -- FROM books
 
-SELECT column_name, data_type 
+SELECT COLUMN_NAME, COLUMN_TYPE 
 FROM INFORMATION_SCHEMA.COLUMNS 
-where table_name = 'columns'
-  and table_schema = 'information_schema';
+where TABLE_NAME = 'Books'
+  and TABLE_SCHEMA = 'alx_book_store';
