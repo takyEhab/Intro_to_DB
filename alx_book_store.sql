@@ -16,30 +16,54 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `Authors`
---
-CREATE DATABASE IF NOT EXISTS alx_book_store
-USE alx_book_store;
-
+-- Table structure for table `authors`
 --
 
-DROP TABLE IF EXISTS `Authors`;
+DROP TABLE IF EXISTS `authors`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `Authors` (
-  `author_id ` int NOT NULL AUTO_INCREMENT,
+CREATE TABLE `authors` (
+  `author_id` int NOT NULL AUTO_INCREMENT,
   `author_name` varchar(215) NOT NULL,
-  PRIMARY KEY (`author_id `)
+  PRIMARY KEY (`author_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Authors`
+-- Dumping data for table `authors`
 --
 
-LOCK TABLES `Authors` WRITE;
-/*!40000 ALTER TABLE `Authors` DISABLE KEYS */;
-/*!40000 ALTER TABLE `Authors` ENABLE KEYS */;
+LOCK TABLES `authors` WRITE;
+/*!40000 ALTER TABLE `authors` DISABLE KEYS */;
+/*!40000 ALTER TABLE `authors` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `orders`
+--
+
+DROP TABLE IF EXISTS `orders`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `orders` (
+  `book_id` int NOT NULL,
+  `title` varchar(130) DEFAULT NULL,
+  `price` double DEFAULT NULL,
+  `publication_date` date DEFAULT NULL,
+  `author_id` int DEFAULT NULL,
+  PRIMARY KEY (`book_id`),
+  KEY `author_id` (`author_id`),
+  CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`author_id`) REFERENCES `authors` (`author_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `orders`
+--
+
+LOCK TABLES `orders` WRITE;
+/*!40000 ALTER TABLE `orders` DISABLE KEYS */;
+/*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -51,4 +75,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-02-03 17:23:34
+-- Dump completed on 2025-02-05 12:07:58
